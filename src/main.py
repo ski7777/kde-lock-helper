@@ -59,7 +59,7 @@ class KDEInstance:
         sessions = []
         for session in data:
             if session['USER'] == name:
-                sessions.append(int(session['SESSION']))
+                sessions.append(session['SESSION'])
         return(sessions)
 
     def userLockAllSessions(self, name):
