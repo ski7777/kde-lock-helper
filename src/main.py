@@ -3,7 +3,7 @@
 #
 
 import os
-
+import sys
 
 class KDEInstance:
     def execute(self, cmd, options=[], data=''):
@@ -74,3 +74,12 @@ class KDEInstance:
 
 
 KDE = KDEInstance()
+args = sys.argv
+args.pop(0)
+try:
+    if args[0]=="userLockAll":
+        KDE.userLockAllSessions(args[1])
+    if args[0]=="userUnlockAll":
+        KDE.userUnlockAllSessions(args[1])
+except IndexError:
+    print("Check arguments!")
